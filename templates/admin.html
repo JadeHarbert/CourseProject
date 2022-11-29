@@ -1,0 +1,10 @@
+{# HTML file representing the admin page #}
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}CSC122 Course Project{% endblock %}
+
+{% block page_content %}
+    <h1>Admin Page:</h1>
+    {{ wtf.quick_form(form) }}
+{% endblock %}

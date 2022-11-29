@@ -1,0 +1,115 @@
+{# HTML file for displaying the menu and the different filters for the menu #}
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}CSC122 Course Project{% endblock %}
+
+{% block page_content %}
+    <h1 style="text-align: center"> Menu: </h1>
+
+    {{ wtf.quick_form(form) }}
+
+    {% if filter == 'Burgers'  or filter == 'All' %}
+        <h2>Burgers:</h2>
+        {% for burger in burgers %}
+            <table>
+                <tr>
+                    <td style="padding-right: 30px">{{ burger.name }}</td>
+                    <th style="padding-right: 10px">Price:</th>
+                    <td style="padding-right: 30px">${{ burger.price }}</td>
+                    <th style="padding-right: 10px">Toppings:</th>
+                    {% for topping in burger.toppings %}
+                        <td style="padding-right: 4px">{{ topping.name }}</td>
+                    {% endfor %}
+                </tr>
+            </table>
+        {% endfor %}
+    {% endif %}
+
+    {% if filter == 'Sandwiches'  or filter == 'All' %}
+        <br>
+        <h2>Sandwiches:</h2>
+
+        {% for sandwich in sandwiches %}
+            <table>
+                <tr>
+                    <td style="padding-right: 30px">{{ sandwich.name }}</td>
+                    <th style="padding-right: 10px">Price:</th>
+                    <td style="padding-right: 30px">${{ sandwich.price }}</td>
+                    <th style="padding-right: 10px">Toppings:</th>
+                    {% for topping in sandwich.toppings %}
+                        <td style="padding-right: 4px">{{ topping.name }}</td>
+                    {% endfor %}
+                </tr>
+            </table>
+        {% endfor %}
+    {% endif %}
+
+    {% if filter == 'Salads'  or filter == 'All' %}
+        <br>
+        <h2>Salads:</h2>
+
+        {% for salad in salads %}
+            <table>
+                <tr>
+                    <td style="padding-right: 30px">{{ salad.name }}</td>
+                    <th style="padding-right: 10px">Price:</th>
+                    <td style="padding-right: 30px">${{ salad.price }}</td>
+                    <th style="padding-right: 10px">Toppings:</th>
+                    {% for topping in salad.toppings %}
+                        <td style="padding-right: 4px">{{ topping.name }}</td>
+                    {% endfor %}
+                </tr>
+            </table>
+        {% endfor %}
+    {% endif %}
+
+    {% if filter == 'Subs'  or filter == 'All' %}
+        <br>
+        <h2>Subs:</h2>
+
+        {% for sub in subs %}
+            <table>
+                <tr>
+                    <td style="padding-right: 30px">{{ sub.name }}</td>
+                    <th style="padding-right: 10px">Price:</th>
+                    <td style="padding-right: 30px">${{ sub.price }}</td>
+                    <th style="padding-right: 10px">Toppings:</th>
+                    {% for topping in sub.toppings %}
+                        <td style="padding-right: 4px">{{ topping.name }}</td>
+                    {% endfor %}
+                </tr>
+            </table>
+        {% endfor %}
+    {% endif %}
+
+    {% if filter == 'Appetizers'  or filter == 'All' %}
+        <br>
+        <h2>Appetizers:</h2>
+
+        {% for app in apps %}
+            <table>
+                <tr>
+                    <td style="padding-right: 30px">{{ app.name }}</td>
+                    <th style="padding-right: 10px">Price:</th>
+                    <td style="padding-right: 30px">${{ app.price }}</td>
+                </tr>
+            </table>
+        {% endfor %}
+    {% endif %}
+
+    {% if filter == 'Fried Chicken'  or filter == 'All' %}
+        <br>
+        <h2>Fried Chicken:</h2>
+
+        {% for chicken in chickens %}
+            <table>
+                <tr>
+                    <td style="padding-right: 30px">{{ chicken.name }}</td>
+                    <th style="padding-right: 10px">Price:</th>
+                    <td style="padding-right: 30px">${{ chicken.price }}</td>
+                </tr>
+            </table>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

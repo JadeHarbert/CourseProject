@@ -1,0 +1,21 @@
+{# HTML file representing deleting an item from the database #}
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}CSC122 Course Project{% endblock %}
+
+{% block page_content %}
+    <h1>Admin Page:</h1>
+    {% if form %}
+        <h2>Deleting Items from Menu:</h2>
+        {{ wtf.quick_form(form) }}
+    {% endif %}
+    {% if isSuccessful and not form %}
+        <p> Item Deleted successfully</p>
+        <p><a href="/admin/delete">Delete another item</a></p>
+    {% elif not isSuccessful and not form %}
+        <p> Item could not be deleted</p>
+        <p><a href="/admin/delete">Try again</a></p>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{# HTML file representing adding an item to the database #}
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}CSC122 Course Project{% endblock %}
+
+{% block page_content %}
+    <h1>Admin Page:</h1>
+    {% if form %}
+        <h2>Add Items to Menu</h2>
+        {{ wtf.quick_form(form) }}
+    {% endif %}
+    {% if isSuccessful and not form %}
+        <p> Item added successfully</p>
+        <p><a href="/admin/add">Add another item</a></p>
+    {% elif not isSuccessful and not form and not error %}
+        <p> Item could not be added</p>
+        <p><a href="/admin/add">Try again</a></p>
+    {% elif error and not form %}
+        <p> Item name already exists</p>
+        <p><a href="/admin/add">Try again</a></p>
+    {% endif %}
+{% endblock %}

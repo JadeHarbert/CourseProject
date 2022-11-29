@@ -1,0 +1,46 @@
+{# HTML file that displays all the contact information #}
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}CSC122 Course Project{% endblock %}
+
+{% block page_content %}
+    <h1>Contact:</h1>
+    <img src="static/UnadillaStore.jpg">
+    <p>Phone Number: 734-498-2400</p>
+    <p>Email: unadillastore@gmail.com</p>
+    <a href="https://www.facebook.com/profile.php?id=100063681663112">Facebook Page</a>
+    <p>Address: 13329 Unadilla Rd, Gregory, MI, United States, Michigan</p>
+    <p>Hours of Operation:</p>
+    <table>
+        <tr>
+            <th>Sunday</th>
+            <td>8am - 9pm</td>
+        </tr>
+        <tr>
+            <th>Monday</th>
+            <td>7am - 9pm</td>
+        </tr>
+        <tr>
+            <th>Tuesday</th>
+            <td>7am - 9pm</td>
+        </tr>
+        <tr>
+            <th>Wednesday</th>
+            <td>7am - 9pm</td>
+        </tr>
+        <tr>
+            <th>Thursday</th>
+            <td>7am - 9pm</td>
+        </tr>
+        <tr>
+            <th>Friday</th>
+            <td>7am - 10pm</td>
+        </tr>
+        <tr>
+            <th>Saturday</th>
+            <td>7am - 10pm</td>
+        </tr>
+    </table>
+
+{% endblock %}
