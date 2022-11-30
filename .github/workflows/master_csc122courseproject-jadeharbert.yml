@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'CSC122CourseProject-JadeHarbert'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6D50027BA2F148F583B02D04F9B2D69C }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8AA46C8E548346B183FD00120B371CD0 }}
