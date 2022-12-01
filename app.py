@@ -11,9 +11,16 @@ from wtforms import SelectField, SubmitField, StringField, DecimalField, SelectM
 from wtforms.validators import InputRequired
 
 app = Flask(__name__)
+
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SECRET_KEY'] = 'hard to guess string'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:michael2001@localhost/final_project'
+dbname = os.environ['DBNAME']
+dbhost = os.environ['DBHOST']
+dbuser = os.environ['DBUSER']
+dbpass = os.environ['DBPASS']
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://' + dbuser + ':' + dbpass + '@' + dbhost + '/' + dbname
+
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 bootstrap = Bootstrap(app)
 moment = Moment(app)
