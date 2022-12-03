@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'Testing-Azure-CSC122'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E959C3244952474CAD5E112852A41B35 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_66C0B9B35C18476185DFDAEBAE70EC77 }}
