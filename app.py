@@ -14,14 +14,28 @@ app = Flask(__name__)
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SECRET_KEY'] = 'hard to guess string'
-dbname = 'final_project'
-dbhost = 'localhost'
-dbuser = 'postgres'
-dbpass = 'michael2001'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://' + dbuser + ':' + dbpass + '@' + dbhost + '/' + dbname
+# dbname = 'final_project'
+# dbhost = 'localhost'
+# dbuser = 'postgres'
+# dbpass = 'michael2001'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://' + dbuser + ':' + dbpass + '@' + dbhost + '/' + dbname
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+# WEBSITE_HOSTNAME exists only in production environment
+if not 'WEBSITE_HOSTNAME' in os.environ:
+    # local development, where we'll use environment variables
+    print("Loading config.development and environment variables from .env file.")
+    app.config.from_object('azureproject.development')
+else:
+    # production
+    print("Loading config.production.")
+    app.config.from_object('azureproject.production')
 
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config.update(
+    SQLALCHEMY_DATABASE_URI=app.config.get('DATABASE_URI'),
+    SQLALCHEMY_TRACK_MODIFICATIONS=False,
+)
+
 bootstrap = Bootstrap(app)
 moment = Moment(app)
 
