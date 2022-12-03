@@ -2,7 +2,7 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 # More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
 
-name: Build and deploy Python app to Azure Web App - Testing-Azure-CSC122
+name: Build and deploy Python app to Azure Web App - Course-Project-JadeHarbert
 
 on:
   push:
@@ -58,6 +58,6 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'Testing-Azure-CSC122'
+          app-name: 'Course-Project-JadeHarbert'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_42A108CB97AD48BBA8E11217458A06C3 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E92ABB8B673A40AF9B50BE2427EB1E41 }}
