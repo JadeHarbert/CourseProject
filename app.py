@@ -14,10 +14,10 @@ app = Flask(__name__)
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SECRET_KEY'] = 'hard to guess string'
-dbname = os.environ['DBNAME']
-dbhost = os.environ['DBHOST']
-dbuser = os.environ['DBUSER']
-dbpass = os.environ['DBPASS']
+dbname = 'final_project'
+dbhost = 'localhost'
+dbuser = 'postgres'
+dbpass = 'michael2001'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://' + dbuser + ':' + dbpass + '@' + dbhost + '/' + dbname
 
 
